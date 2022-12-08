@@ -1,0 +1,305 @@
+﻿<Window x:Class="Pr8v7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr8v7_Yusifova"
+        mc:Ignorable="d"
+        Title="Практическая №8" 
+        Height="390" 
+        Width="550"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+        Icon="Pictures/Утка.ico"
+        >
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Menu Grid.Row="0"
+              Grid.ColumnSpan="2" 
+                  Background="#FF384363">
+                <MenuItem Header="Справка"  
+                      Height="20" 
+                      Width="68" 
+                      Foreground="White">
+                    <MenuItem Header="О программе"
+                          x:Name="mItAboutProgram"
+                          Click="mItAboutProgram_Click"
+                          Background="#FF384363">
+                        <MenuItem.Icon>
+                            <Image Source="Pictures/Лампочка.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Выход"
+                          x:Name="mItExit"
+                          Click="mItExit_Click"
+                          Background="#FF384363">
+                        <MenuItem.Icon>
+                            <Image Source="Pictures/Выход.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+
+            <GroupBox Header="Прямоугольник"
+                      Grid.Row="1"
+                      Grid.RowSpan="3"
+                      Grid.Column="0"
+                      Margin="5, 5, 5, 10" 
+                      Foreground="#FFB99E3E" 
+                      BorderBrush="#FFB99E3E"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Сторона a"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Margin="10"
+                       HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtBoxRectangleSideA"
+                         Grid.Row="2"
+                         Grid.Column="0"
+                         Width="100"
+                         Height="30"
+                         HorizontalAlignment="Center"
+                         TextChanged="txtBoxRectangleSideA_TextChanged"/>
+
+
+                <Label Content="Сторона b"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="10"
+                       HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtBoxRectangleSideB"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         Width="100"
+                         Height="30"
+                         HorizontalAlignment="Center"
+                         TextChanged="txtBoxRectangleSideB_TextChanged"/>
+            </Grid>
+
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Периметр"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Margin="10"
+                       HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtBoxRectanglPerimetr"
+                         Grid.Row="2"
+                         Grid.Column="0"
+                         Width="100"
+                         Height="30"
+                         HorizontalAlignment="Center"
+                         IsReadOnly="True"/>
+
+
+                <Label Content="Площадь"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="10"
+                       HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtBoxRectangleSquare"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         Width="100"
+                         Height="30"
+                         HorizontalAlignment="Center"
+                         IsReadOnly="True"/>
+            </Grid>
+            <Button Content="Получить результат"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="20, 15, 125, 25" 
+                    Background="#FF4F58A4" 
+                    Foreground="#FFB6D0AD" 
+                    FontWeight="Bold" 
+                    BorderBrush="#FFB6D0AD"
+                    Cursor="Hand" 
+                    x:Name="btnRectanglResult"
+                    Click="btnRectanglResult_Click"/>
+            
+            <Button Content="Очистить"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="160, 15, 20, 25" 
+                    Background="#FFC64D4D" 
+                    Foreground="#FFB6D0AD" 
+                    FontWeight="Bold" 
+                    BorderBrush="#FFB6D0AD"
+                    Cursor="Hand" 
+                    x:Name="btnRectanglClear"
+                    Click="btnRectanglClear_Click"/>
+
+
+            <GroupBox Header="Круг"
+                      Grid.Row="1"
+                      Grid.RowSpan="3"
+                      Grid.Column="1"
+                      Margin="5, 5, 5, 10"
+                      Foreground="#FFB99E3E" 
+                      BorderBrush="#FFB99E3E"/>
+
+            <Grid Grid.Row="1"
+                  Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Радиус"
+                       HorizontalAlignment="Center" 
+                       Grid.Row="1"
+                       Height="30"/>
+                <TextBox x:Name="txtBoxCircleRadius"
+                         HorizontalAlignment="Center" 
+                         Width="100"
+                         Height="30" 
+                         Grid.Row="2"
+                         TextChanged="txtBoxCircleRadius_TextChanged"/>
+
+                <Label Content="Радиус клон "
+                       HorizontalAlignment="Center" 
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Height="30"/>
+                <TextBox x:Name="txtBoxCircleRadius2"
+                         HorizontalAlignment="Center" 
+                         Width="100"
+                         Height="30" 
+                         Grid.Row="2"
+                         Grid.Column="2"
+                         TextChanged="txtBoxCircleRadius_TextChanged"
+                         IsReadOnly="True"/>
+            </Grid>
+
+
+            <Grid Grid.Row="2"
+                  Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Периметр"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Margin="10"
+                       HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtBoxCirclePerimetr"
+                         Grid.Row="2"
+                         Grid.Column="0"
+                         Width="100"
+                         Height="30"
+                         HorizontalAlignment="Center"
+                         IsReadOnly="True"/>
+
+
+                <Label Content="Площадь"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="10"
+                       HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtBoxCircleSquare"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         Width="100"
+                         Height="30"
+                         HorizontalAlignment="Center"
+                         IsReadOnly="True"/>
+            </Grid>
+            <Button Content="Получить результат"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="20, 15, 125, 25" 
+                    Background="#FF4F58A4" 
+                    Foreground="#FFB6D0AD" 
+                    FontWeight="Bold" 
+                    BorderBrush="#FFB6D0AD"
+                    Cursor="Hand" 
+                    x:Name="btnCircleResult"
+                    Click="btnCircleResult_Click"/>
+
+            <Button Content="Очистить"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="160, 15, 20, 25" 
+                    Background="#FFC64D4D" 
+                    Foreground="#FFB6D0AD" 
+                    FontWeight="Bold" 
+                    BorderBrush="#FFB6D0AD"
+                    Cursor="Hand" 
+                    x:Name="btnCircleClear"
+                    Click="btnCircleClear_Click"/>
+
+            <Button Content="Сравнить фигуры"
+                    Grid.Row="5"
+                    Margin="10"
+                    Background="#FF4F58A4" 
+                    Foreground="#FFB6D0AD" 
+                    FontWeight="Bold" 
+                    BorderBrush="#FFB6D0AD"
+                    Cursor="Hand"
+                    x:Name="btnFiguresCompare"
+                    Click="btnFiguresCompare_Click"/>
+
+            <Button Content="Клонировать радиус"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Margin="10"
+                    Background="#FF4F58A4" 
+                    Foreground="#FFB6D0AD" 
+                    FontWeight="Bold" 
+                    BorderBrush="#FFB6D0AD"
+                    Cursor="Hand"
+                    x:Name="btnFiguresClon"
+                    Click="btnFiguresClon_Click"/>
+        </Grid>
+    </Grid>
+</Window>
